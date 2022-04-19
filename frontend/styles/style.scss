@@ -1,0 +1,232 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+.hidden {
+  display: none;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($wrap, $direction, $justify, $align) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;  
+}
+
+@mixin btnStyling {
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background:whitesmoke;
+  font-size: 14px;
+  color: black;
+
+  &:hover {
+    border-color: $bottle-green-dark;
+    cursor: pointer;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+$bottle-green-dark: rgb(19, 87, 76);
+$bottle-green-light: rgb(43, 170, 149);
+$heading-font: 'Orelega One', cursive;
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .a-links {
+    text-decoration: none;
+    color: black;
+    padding-top: 6px;
+    width: 123px;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  .header {
+    background: $bottle-green-dark;
+    text-align: center;
+    margin-bottom: 10px;
+
+    .top-heading {
+      margin: 15px 0 15px 0;
+      color: white;
+      font-family: $heading-font;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 5px 0 5px 0;
+      height: 40px;
+      background: $bottle-green-light;
+
+      button {
+        @include btnStyling;
+      }
+
+    }
+  }
+
+  .main {
+    flex-grow: 1;
+    margin-bottom: 10px;
+
+    .item-list{
+      @include flex-center;
+      flex-direction: column;
+
+      .book-container {
+        @include flex(wrap, row, space-around, center);
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 5px;
+        width: 90%;
+        max-width: 783px;
+  
+        .book-cover {
+          width: 182px;
+          height: 277px;
+          margin-top: 10px;
+          outline: 1px solid black;
+          border-radius: 5px;
+
+          @media (min-width: 602px) {
+            margin-top: 0px;
+          }
+        }
+  
+        .book-text-container {
+          width: 315px;
+          text-align: center;
+
+          @media (min-width: 602px) {
+            text-align:left;
+          }
+  
+          h3 {
+            margin-bottom: 20px;
+          }
+  
+          p {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+    }
+
+    .login-form-container {
+      @include flex-center;
+      flex-direction: column;
+      margin-top: 30px;
+
+      .login-form-styling {
+        @include flex-center;
+        flex-direction: column;
+        width: 300px;
+
+        label {
+          margin-bottom: 10px;
+        }
+
+        input {
+          padding: 4px 0 4px 4px;
+          border: 1px solid black;
+          border-radius: 5px;
+        }
+
+        button {
+          @include btnStyling;
+          margin-bottom: 10px;
+          font-size: 16px;
+          color: black;
+
+          &:hover {
+            border-color: $bottle-green-dark;
+            cursor: pointer;
+          }
+        }
+
+        #loginBtn {
+          padding: 5px 16px 5px 16px;
+        }
+      }
+
+    }
+  
+    .book-form {
+      margin: 10px 0 10px 0;
+    }
+  
+    .audio-form {
+      margin: 10px 0 10px 0;
+    }
+
+    .profile-info-container {
+      margin: 20px 0 20px 0;
+      @include flex-center;
+
+      p {
+        margin: 5px 0 5px 0;
+      }
+    }
+
+    .main-heading {
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+
+  .main.add-books {
+    @include flex(wrap, row, space-around, center);
+
+    .item-container {
+      margin-top: 0px;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .file {
+        width: 180px;
+      }
+
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        text-align: center;
+        @include btnStyling;
+        background:white;
+        font-size: 16px;
+      }
+    }
+
+  }
+  
+  .footer {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding-top: 25px;
+    background: $bottle-green-dark;
+    color: white;
+  }
+}

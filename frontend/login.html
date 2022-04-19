@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../frontend/styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>BookDucks Online Library</title>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <header class="header">
+        <a href="index.html" class="a-links"><h1 class="top-heading">BookDucks</h1></a>
+        <a href="index.html" class="a-links"><h2 class="top-heading">Your online library</h2></a>
+        <nav class="nav">
+          <a href="addBooks.html" class="a-links">Add Books</a>
+          <a href="register.html" class="a-links">Register User</a>
+          <a href="login.html" id="loginAnchor" class="a-links">Login</a>
+          <a href="login.html" id="profileAnchor" class="hidden a-links">My Profile</a>
+          <button id="logOutBtn" class="hidden">Log out</button>
+        </nav>
+      </header>
+
+      <main class="main">
+
+        <h3 id="loginMainHeading" class="main-heading">Log in to account</h3>
+
+        <div id="loginFormContainer" class="login-form-container">
+          <form id="loginForm" class="login-form-styling">
+            <label for="userName">Username or Email</label>
+            <input type="text" name="userName" id="userName" required>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <button type="submit" id="loginBtn">Login</button>
+            <button id="regBtn">Register</button>
+          </form>
+        </div>
+
+        <div id="profileInfo" class="profile-info-container"></div>
+        <div id="productList" class="item-list"></div>
+
+      </main>
+      
+      <footer class="footer">
+        <p><strong>BookDucks Ltd.</strong></p>
+        <p>Cresta Palace, La Cresta</p>
+        <p>Panama City, Panama</p>
+      </footer>
+    </div>
+
+
+    <script src="../frontend/js/fetchData.js"></script>
+    <script src="../frontend/js/login.js"></script>
+    <script src="../frontend/js/renderProfile.js"></script>
+    <script src="../frontend/js/main.js"></script>
+  </body>
+</html>

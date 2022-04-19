@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../frontend/styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>BookDucks Online Library</title>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <header class="header">
+        <a href="index.html" class="a-links"><h1 class="top-heading">BookDucks</h1></a>
+        <a href="index.html" class="a-links"><h2 class="top-heading">Your online library</h2></a>
+        <nav class="nav">
+          <a href="addBooks.html" class="a-links">Add Books</a>
+          <a href="register.html" class="a-links">Register User</a>
+          <a href="login.html" id="loginAnchor" class="a-links">Login</a>
+          <a href="login.html" id="profileAnchor" class="hidden a-links">My Profile</a>
+          <button id="logOutBtn" class="hidden">Log out</button>
+        </nav>
+      </header>
+
+      <main class="main add-books">
+        <div class="hidden loggedin-headings" id="loggedInHeadings">
+          <h3 class="main-heading">You must be logged in to add new items to library.</h3>
+          <h3 class="main-heading">Click here to <a href="login.html">log in.</a></h3>
+        </div>
+        <div class="login-form-container item-container" id="addBookContainer">
+          <h3 class="main-heading">Add book</h3>
+          <form class="login-form-styling" id="bookForm">
+            <label for="bookTitle">Title</label>
+            <input type="text" name="bookTitle" id="bookTitle" required>
+            <br>
+            <label for="bookAuthor">Author</label>
+            <input type="text" name="bookAuthor" id="bookAuthor" required>
+            <br>
+            <label for="bookPages">Page numbers</label>
+            <input type="number" name="bookPages" id="bookPages" required>
+            <br>
+            <label for="bookRating">Rating</label>
+            <input type="number" name="bookRating" id="bookRating" required>
+            <br>
+            <label for="bookCover" class="file-label">Book Cover</label>
+            <input type="file" name="bookCover" id="bookCover" class="file" required>
+            <br>
+            <select name="bookGenre" id="bookGenre" required>
+              <option value="" selected disabled>Choose a genre</option>
+              <option value=1>Historical fiction</option>
+              <option value=2>Fantasy</option>
+              <option value=3>History</option>
+              <option value=4>Fiction</option>
+              <option value=5>Autobiography</option>
+            </select>
+            <br>
+            <button type="submit" id="addBookBtn">Add Book</button>
+          </form>
+        </div>
+
+        <div class="login-form-container item-container" id="addAudioContainer">
+          <h3 class="main-heading">Add audiobook</h3>
+          <form class="login-form-styling" id="audioForm">
+            <label for="audioTitle">Title</label>
+            <input type="text" name="audioTitle" id="audioTitle" required>
+            <br>
+            <label for="audioRelease">Release date</label>
+            <input type="date" name="audioRelease" id="audioRelease" required>
+            <br>
+            <label for="audioLength">Length minutes</label>
+            <input type="number" name="audioLength" id="audioLength" required>
+            <br>
+            <label for="audioRating">Rating</label>
+            <input type="number" name="audioRating" id="audioRating" required>
+            <br>
+            <label for="audioCover" class="file-label">Book Cover</label>
+            <input type="file" name="audioCover" id="audioCover" class="file" required>
+            <br>
+            <select name="audioGenre" id="audioGenre" required>
+              <option value="" selected disabled>Choose a genre</option>
+              <option value=1>Historical fiction</option>
+              <option value=2>Fantasy</option>
+              <option value=3>History</option>
+              <option value=4>Fiction</option>
+              <option value=5>Autobiography</option>
+            </select>
+            <br>
+            <button type="submit" id="addAudioBtn">Add Audiobook</button>
+          </form>
+        </div>
+
+      </main>
+      
+      <footer class="footer">
+        <p><strong>BookDucks Ltd.</strong></p>
+        <p>Cresta Palace, La Cresta</p>
+        <p>Panama City, Panama</p>
+      </footer>
+    </div>
+
+    <script src="../frontend/js/addBooks.js"></script>
+    <script src="../frontend/js/main.js"></script>
+  </body>
+</html>

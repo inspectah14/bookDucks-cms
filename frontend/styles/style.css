@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Orelega+One&display=swap");
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .a-links {
+  text-decoration: none;
+  color: black;
+  padding-top: 6px;
+  width: 123px;
+}
+
+.wrapper .a-links:hover {
+  font-weight: 600;
+}
+
+.wrapper .header {
+  background: #13574c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.wrapper .header .top-heading {
+  margin: 15px 0 15px 0;
+  color: white;
+  font-family: "Orelega One", cursive;
+  letter-spacing: 1px;
+}
+
+.wrapper .header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 5px 0 5px 0;
+  height: 40px;
+  background: #2baa95;
+}
+
+.wrapper .header .nav button {
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: whitesmoke;
+  font-size: 14px;
+  color: black;
+}
+
+.wrapper .header .nav button:hover {
+  border-color: #13574c;
+  cursor: pointer;
+}
+
+.wrapper .main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.wrapper .main .item-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .main .item-list .book-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 5px;
+  width: 90%;
+  max-width: 783px;
+}
+
+.wrapper .main .item-list .book-container .book-cover {
+  width: 182px;
+  height: 277px;
+  margin-top: 10px;
+  outline: 1px solid black;
+  border-radius: 5px;
+}
+
+@media (min-width: 602px) {
+  .wrapper .main .item-list .book-container .book-cover {
+    margin-top: 0px;
+  }
+}
+
+.wrapper .main .item-list .book-container .book-text-container {
+  width: 315px;
+  text-align: center;
+}
+
+@media (min-width: 602px) {
+  .wrapper .main .item-list .book-container .book-text-container {
+    text-align: left;
+  }
+}
+
+.wrapper .main .item-list .book-container .book-text-container h3 {
+  margin-bottom: 20px;
+}
+
+.wrapper .main .item-list .book-container .book-text-container p {
+  margin-bottom: 10px;
+}
+
+.wrapper .main .login-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+}
+
+.wrapper .main .login-form-container .login-form-styling {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+}
+
+.wrapper .main .login-form-container .login-form-styling label {
+  margin-bottom: 10px;
+}
+
+.wrapper .main .login-form-container .login-form-styling input {
+  padding: 4px 0 4px 4px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.wrapper .main .login-form-container .login-form-styling button {
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: whitesmoke;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: black;
+}
+
+.wrapper .main .login-form-container .login-form-styling button:hover {
+  border-color: #13574c;
+  cursor: pointer;
+}
+
+.wrapper .main .login-form-container .login-form-styling button:hover {
+  border-color: #13574c;
+  cursor: pointer;
+}
+
+.wrapper .main .login-form-container .login-form-styling #loginBtn {
+  padding: 5px 16px 5px 16px;
+}
+
+.wrapper .main .book-form {
+  margin: 10px 0 10px 0;
+}
+
+.wrapper .main .audio-form {
+  margin: 10px 0 10px 0;
+}
+
+.wrapper .main .profile-info-container {
+  margin: 20px 0 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .main .profile-info-container p {
+  margin: 5px 0 5px 0;
+}
+
+.wrapper .main .main-heading {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.wrapper .main.add-books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .main.add-books .item-container {
+  margin-top: 0px;
+}
+
+.wrapper .main.add-books .item-container h3 {
+  margin-bottom: 20px;
+}
+
+.wrapper .main.add-books .item-container .file {
+  width: 180px;
+}
+
+.wrapper .main.add-books .item-container select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: whitesmoke;
+  font-size: 14px;
+  color: black;
+  background: white;
+  font-size: 16px;
+}
+
+.wrapper .main.add-books .item-container select:hover {
+  border-color: #13574c;
+  cursor: pointer;
+}
+
+.wrapper .footer {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding-top: 25px;
+  background: #13574c;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
