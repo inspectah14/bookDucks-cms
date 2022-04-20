@@ -10,7 +10,6 @@
   </head>
   <body>
     <div class="wrapper">
-
       <header class="header">
         <a href="index.html" class="a-links"><h1 class="top-heading">BookDucks</h1></a>
         <a href="index.html" class="a-links"><h2 class="top-heading">Online library</h2></a>
@@ -22,7 +21,6 @@
           <button id="logOutBtn" class="hidden">Log out</button>
         </nav>
       </header>
-
       <main class="main add-books">
         <div class="hidden loggedin-headings" id="loggedInHeadings">
           <h3 class="main-heading">You must be logged in to add new items to library.</h3>
@@ -46,24 +44,23 @@
             <label for="bookCover" class="file-label">Book Cover</label>
             <input type="file" name="bookCover" id="bookCover" class="file" required>
             <br>
+            <p>Choose one or more genres</p>
             <div class="genre-styling" id="bookGenre">
-              <p>Choose one or more genres</p>
-              <input type="checkbox" name="book-genre" id="histFictBook" value="1">
               <label for="histFictBook">Historical Fiction</label>
-              <input type="checkbox" name="book-genre" id="fantasyBook" value="2">
+              <input type="checkbox" name="book-genre" id="histFictBook" value="1">
               <label for="fantasyBook">Fantasy</label>
-              <input type="checkbox" name="book-genre" id="historyBook" value="3">
+              <input type="checkbox" name="book-genre" id="fantasyBook" value="2">
               <label for="historyBook">History</label>
-              <input type="checkbox" name="book-genre" id="fictionBook" value="4">
+              <input type="checkbox" name="book-genre" id="historyBook" value="3">
               <label for="fictionBook">Fiction</label>
-              <input type="checkbox" name="book-genre" id="autobioBook" value="5">
+              <input type="checkbox" name="book-genre" id="fictionBook" value="4">
               <label for="autobioBook">Autobiography</label>
+              <input type="checkbox" name="book-genre" id="autobioBook" value="5">
             </div>
             <br>
             <button type="submit" id="addBookBtn">Add Book</button>
           </form>
         </div>
-
         <div class="login-form-container item-container" id="addAudioContainer">
           <h3 class="main-heading">Add audiobook</h3>
           <form class="login-form-styling" id="audioForm">
@@ -82,33 +79,30 @@
             <label for="audioCover" class="file-label">Book Cover</label>
             <input type="file" name="audioCover" id="audioCover" class="file" required>
             <br>
+            <p>Choose one or more genres</p>
             <div class="genre-styling" id="audioGenre">
-              <p>Choose one or more genres</p>
-              <input type="checkbox" name="audio-genre" id="histFictAudio" value="1">
               <label for="histFictAudio">Historical Fiction</label>
-              <input type="checkbox" name="audio-genre" id="fantasyAudio" value="2">
+              <input type="checkbox" name="audio-genre" id="histFictAudio" value="1">
               <label for="fantasyAudio">Fantasy</label>
-              <input type="checkbox" name="audio-genre" id="historyAudio" value="3">
+              <input type="checkbox" name="audio-genre" id="fantasyAudio" value="2">
               <label for="historyAudio">History</label>
-              <input type="checkbox" name="audio-genre" id="fictionAudio" value="4">
+              <input type="checkbox" name="audio-genre" id="historyAudio" value="3">
               <label for="fictionAudio">Fiction</label>
-              <input type="checkbox" name="audio-genre" id="autobioAudio" value="5">
+              <input type="checkbox" name="audio-genre" id="fictionAudio" value="4">
               <label for="autobioAudio">Autobiography</label>
+              <input type="checkbox" name="audio-genre" id="autobioAudio" value="5">
             </div>
             <br>
             <button type="submit" id="addAudioBtn">Add Audiobook</button>
           </form>
         </div>
-
       </main>
-      
       <footer class="footer">
         <p><strong>BookDucks Ltd.</strong></p>
         <p>Cresta Palace, La Cresta</p>
         <p>Panama City, Panama</p>
       </footer>
     </div>
-
     <script src="../frontend/js/addBooks.js"></script>
     <script src="../frontend/js/main.js"></script>
   </body>

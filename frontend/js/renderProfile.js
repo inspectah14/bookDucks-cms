@@ -34,6 +34,7 @@ let productRender = async (user) => {
     let bookPages = document.createElement("p");
     let bookRating = document.createElement("p");
     let bookCoverImg = document.createElement("img");
+    bookCoverImg.classList = "book-cover";
     let {title, author, pages, rating, genres, user, bookCover} = book.attributes;
 
     itemHeading.innerHTML = "Book";
@@ -77,6 +78,7 @@ let productRender = async (user) => {
     let bookLength = document.createElement("p");
     let bookRating = document.createElement("p");
     let bookCoverImg = document.createElement("img");
+    bookCoverImg.classList = "book-cover";
     let {title, releaseDate, lengthMin, rating, genres, user, bookCover} = book.attributes;
 
     itemHeading.innerHTML = "Audiobook";
