@@ -48,10 +48,12 @@ let productRender = async (user) => {
 
     bookTextContainer.append(itemHeading, bookTitle, bookAuth, bookPages, bookRating);
 
+    let genreContainer = document.createElement("div");
+    genreContainer.innerHTML = `<p><strong>Genres:</strong><p>`;
+
     genres.data.map((genre) => {
-      let bookGenre = document.createElement("p");
-      bookGenre.innerHTML = `<strong>Genres:</strong> ${genre.attributes.genre}`;
-      bookTextContainer.append(bookGenre);
+      genreContainer.innerHTML += `<p>${genre.attributes.genre}</p>`;
+      bookTextContainer.append(genreContainer);
     })
 
     let bookUser = document.createElement("p");
@@ -89,10 +91,12 @@ let productRender = async (user) => {
 
     bookTextContainer.append(itemHeading, bookTitle, bookRelease, bookLength, bookRating);
 
+    let genreContainer = document.createElement("div");
+    genreContainer.innerHTML = `<p><strong>Genres:</strong><p>`;
+
     genres.data.map((genre) => {
-      let bookGenre = document.createElement("p");
-      bookGenre.innerHTML = `<strong>Genres:</strong> ${genre.attributes.genre}`;
-      bookTextContainer.append(bookGenre);
+      genreContainer.innerHTML += `<p>${genre.attributes.genre}</p>`;
+      bookTextContainer.append(genreContainer);
     })
 
     let bookUser = document.createElement("p");
