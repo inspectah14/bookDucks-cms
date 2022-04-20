@@ -74,11 +74,15 @@ $heading-font: 'Orelega One', cursive;
       display: flex;
       justify-content: space-evenly;
       padding: 5px 0 5px 0;
-      height: 40px;
+      height: 50px;
       background: $bottle-green-light;
 
       button {
         @include btnStyling;
+      }
+
+      @media (min-width: 450px) {
+        height: 40px;
       }
 
     }
@@ -181,7 +185,7 @@ $heading-font: 'Orelega One', cursive;
     }
 
     .profile-info-container {
-      margin: 20px 0 20px 0;
+      margin-bottom: 20px;
       @include flex-center;
 
       p {
@@ -192,6 +196,10 @@ $heading-font: 'Orelega One', cursive;
     .main-heading {
       text-align: center;
       margin-top: 30px;
+    }
+
+    .main-heading.index {
+      margin-bottom: 30px;
     }
   }
 
@@ -219,6 +227,10 @@ $heading-font: 'Orelega One', cursive;
       }
     }
 
+  }
+
+  .main.login {
+    margin-top: 40px;
   }
   
   .footer {

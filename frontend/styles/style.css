@@ -54,7 +54,7 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   padding: 5px 0 5px 0;
-  height: 40px;
+  height: 50px;
   background: #2baa95;
 }
 
@@ -70,6 +70,12 @@
 .wrapper .header .nav button:hover {
   border-color: #13574c;
   cursor: pointer;
+}
+
+@media (min-width: 450px) {
+  .wrapper .header .nav {
+    height: 40px;
+  }
 }
 
 .wrapper .main {
@@ -230,7 +236,7 @@
 }
 
 .wrapper .main .profile-info-container {
-  margin: 20px 0 20px 0;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,6 +255,10 @@
 .wrapper .main .main-heading {
   text-align: center;
   margin-top: 30px;
+}
+
+.wrapper .main .main-heading.index {
+  margin-bottom: 30px;
 }
 
 .wrapper .main.add-books {
@@ -297,6 +307,10 @@
 .wrapper .main.add-books .item-container select:hover {
   border-color: #13574c;
   cursor: pointer;
+}
+
+.wrapper .main.login {
+  margin-top: 40px;
 }
 
 .wrapper .footer {

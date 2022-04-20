@@ -30,13 +30,13 @@
         <div class="login-form-container">
           <form id="regForm" class="login-form-styling">
             <label for="regUsername">Username</label>
-            <input type="text" name="regUsername" id="regUsername" required>
+            <input type="text" name="regUsername" id="regUsername" minlength="3" required>
             <br>
             <label for="regEmail">Email</label>
-            <input type="text" name="regEmail" id="regEmail" required>
+            <input type="text" name="regEmail" id="regEmail" minlength="6" required>
             <br>
             <label for="regPassword">Password</label>
-            <input type="text" name="regPassword" id="regPassword" required>
+            <input type="text" name="regPassword" id="regPassword" minlength="6" required>
             <br>
             <button type="submit" id="regBtn">Register</button>
             <button id="loginBtn">Login</button>

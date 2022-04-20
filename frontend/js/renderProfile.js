@@ -28,6 +28,7 @@ let productRender = async (user) => {
     bookContainer.classList = "book-container";
     let bookTextContainer = document.createElement("div");
     bookTextContainer.classList = "book-text-container";
+    let itemHeading = document.createElement("h3");
     let bookTitle = document.createElement("p");
     let bookAuth = document.createElement("p");
     let bookPages = document.createElement("p");
@@ -35,6 +36,7 @@ let productRender = async (user) => {
     let bookCoverImg = document.createElement("img");
     let {title, author, pages, rating, genres, user, bookCover} = book.attributes;
 
+    itemHeading.innerHTML = "Book";
     bookTitle.innerHTML = `<strong>Title:</strong> ` + title;
     bookAuth.innerHTML = `<strong>Author:</strong> ` + author;
     bookPages.innerHTML = `<strong>Page Numbers:</strong> ` + pages;
@@ -44,7 +46,7 @@ let productRender = async (user) => {
       bookCoverImg.src = "http://localhost:1337" + bookCover.data.attributes.url;
     }
 
-    bookTextContainer.append(bookTitle, bookAuth, bookPages, bookRating);
+    bookTextContainer.append(itemHeading, bookTitle, bookAuth, bookPages, bookRating);
 
     genres.data.map((genre) => {
       let bookGenre = document.createElement("p");
@@ -67,6 +69,7 @@ let productRender = async (user) => {
     bookContainer.classList = "book-container";
     let bookTextContainer = document.createElement("div");
     bookTextContainer.classList = "book-text-container";
+    let itemHeading = document.createElement("h3");
     let bookTitle = document.createElement("p");
     let bookRelease = document.createElement("p");
     let bookLength = document.createElement("p");
@@ -74,6 +77,7 @@ let productRender = async (user) => {
     let bookCoverImg = document.createElement("img");
     let {title, releaseDate, lengthMin, rating, genres, user, bookCover} = book.attributes;
 
+    itemHeading.innerHTML = "Audiobook";
     bookTitle.innerHTML = `<strong>Title:</strong> ` + title;
     bookRelease.innerHTML = `<strong>Release Date:</strong> ` + releaseDate;
     bookLength.innerHTML = `<strong>Length:</strong> ${lengthMin} minutes`;
@@ -83,7 +87,7 @@ let productRender = async (user) => {
       bookCoverImg.src = "http://localhost:1337" + bookCover.data.attributes.url;
     }
 
-    bookTextContainer.append(bookTitle, bookRelease, bookLength, bookRating);
+    bookTextContainer.append(itemHeading, bookTitle, bookRelease, bookLength, bookRating);
 
     genres.data.map((genre) => {
       let bookGenre = document.createElement("p");

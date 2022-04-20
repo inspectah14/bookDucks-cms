@@ -12,18 +12,24 @@ let clearFields = () => {
 let loggedInUserObj = sessionStorage.getItem("loggedInUser");
 
 let login = async () => {
-  let response = await axios.post("http://localhost:1337/api/auth/local",
-  {
-    identifier: userName.value,
-    password: password.value,
-  });
-  const token = response.data.jwt;
-  const user = response.data.user;
-  sessionStorage.setItem("token", token);
-  sessionStorage.setItem("loggedInUser", JSON.stringify(user));
-  console.log(user);
-  clearFields();
-  location.reload();
+  try {
+    let response = await axios.post("http://localhost:1337/api/auth/local",
+    {
+      identifier: userName.value,
+      password: password.value,
+    });
+    const token = response.data.jwt;
+    const user = response.data.user;
+    sessionStorage.setItem("token", token);
+    sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+    clearFields();
+    location.reload();
+  }
+  catch(error) {
+    alert("You wrongly entered your login information. Please try again.");
+    clearFields();
+    location.reload();
+  }
 }
 
 loginForm.addEventListener("submit", (e) => {

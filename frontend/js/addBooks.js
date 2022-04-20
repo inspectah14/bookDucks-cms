@@ -17,8 +17,11 @@ const addBook = async () => {
   let imgData = new FormData();
   imgData.append('files', image[0]);
   
-  axios.post("http://localhost:1337/api/upload", imgData)
-    .then(res => {
+  axios.post("http://localhost:1337/api/upload", imgData, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    } 
+  }).then(res => {
       let imageId = res.data[0].id;
       axios.post("http://localhost:1337/api/books", {
               data: {
