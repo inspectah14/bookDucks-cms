@@ -4,15 +4,24 @@ const bookAuthor = document.querySelector("#bookAuthor");
 const bookPages = document.querySelector("#bookPages");
 const bookRating = document.querySelector("#bookRating");
 const bookCover = document.querySelector("#bookCover");
-const bookGenre = document.querySelector("#bookGenre");
+const bookGenreCheckboxes = document.querySelectorAll("[name='book-genre']");
 const addBookContainer = document.querySelector("#addBookContainer");
 const addAudioContainer = document.querySelector("#addAudioContainer");
 const loggedInHeadings = document.querySelector("#loggedInHeadings");
+
+let checkedGenreBookBox = [];
 
 let loggedInUserObj = sessionStorage.getItem("loggedInUser");
 
 const addBook = async () => {
   loggedInUserObj = JSON.parse(loggedInUserObj);
+
+  bookGenreCheckboxes.forEach((box) => {
+    if(box.checked === true) {
+        checkedGenreBookBox.push(box.value);
+    }
+  })
+
   let image = bookCover.files;
   let imgData = new FormData();
   imgData.append('files', image[0]);
@@ -30,7 +39,7 @@ const addBook = async () => {
                   pages: bookPages.value,
                   rating: bookRating.value,
                   bookCover: imageId,
-                  genres: [bookGenre.value],
+                  genres: checkedGenreBookBox,
                   userId: loggedInUserObj.id,
                   user: loggedInUserObj.id
               }
@@ -55,15 +64,28 @@ const audioLength = document.querySelector("#audioLength");
 const audioRating = document.querySelector("#audioRating");
 const audioCover = document.querySelector("#audioCover");
 const audioGenre = document.querySelector("#audioGenre");
+const audioGenreCheckboxes = document.querySelectorAll("[name='audio-genre']");
+
+let checkedGenreAudioBox = [];
 
 const addAudio = async () => {
   loggedInUserObj = JSON.parse(loggedInUserObj);
+
+  audioGenreCheckboxes.forEach((box) => {
+    if(box.checked === true) {
+        checkedGenreAudioBox.push(box.value);
+    }
+  })
+
   let image = audioCover.files;
   let imgData = new FormData();
   imgData.append('files', image[0]);
   
-  axios.post("http://localhost:1337/api/upload", imgData)
-    .then(res => {
+  axios.post("http://localhost:1337/api/upload", imgData, {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`
+    } 
+  }).then(res => {
       let imageId = res.data[0].id;
       axios.post("http://localhost:1337/api/audiobooks", {
               data: {
@@ -72,7 +94,7 @@ const addAudio = async () => {
                   lengthMin: audioLength.value,
                   rating: audioRating.value,
                   bookCover: imageId,
-                  genres: [audioGenre.value],
+                  genres: checkedGenreAudioBox,
                   userId: loggedInUserObj.id,
                   user: loggedInUserObj.id
               }

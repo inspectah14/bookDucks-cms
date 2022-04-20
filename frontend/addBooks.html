@@ -46,14 +46,19 @@
             <label for="bookCover" class="file-label">Book Cover</label>
             <input type="file" name="bookCover" id="bookCover" class="file" required>
             <br>
-            <select name="bookGenre" id="bookGenre" required>
-              <option value="" selected disabled>Choose a genre</option>
-              <option value=1>Historical fiction</option>
-              <option value=2>Fantasy</option>
-              <option value=3>History</option>
-              <option value=4>Fiction</option>
-              <option value=5>Autobiography</option>
-            </select>
+            <div class="genre-styling" id="bookGenre">
+              <p>Choose one or more genres</p>
+              <input type="checkbox" name="book-genre" id="histFictBook" value="1">
+              <label for="histFictBook">Historical Fiction</label>
+              <input type="checkbox" name="book-genre" id="fantasyBook" value="2">
+              <label for="fantasyBook">Fantasy</label>
+              <input type="checkbox" name="book-genre" id="historyBook" value="3">
+              <label for="historyBook">History</label>
+              <input type="checkbox" name="book-genre" id="fictionBook" value="4">
+              <label for="fictionBook">Fiction</label>
+              <input type="checkbox" name="book-genre" id="autobioBook" value="5">
+              <label for="autobioBook">Autobiography</label>
+            </div>
             <br>
             <button type="submit" id="addBookBtn">Add Book</button>
           </form>
@@ -77,14 +82,19 @@
             <label for="audioCover" class="file-label">Book Cover</label>
             <input type="file" name="audioCover" id="audioCover" class="file" required>
             <br>
-            <select name="audioGenre" id="audioGenre" required>
-              <option value="" selected disabled>Choose a genre</option>
-              <option value=1>Historical fiction</option>
-              <option value=2>Fantasy</option>
-              <option value=3>History</option>
-              <option value=4>Fiction</option>
-              <option value=5>Autobiography</option>
-            </select>
+            <div class="genre-styling" id="audioGenre">
+              <p>Choose one or more genres</p>
+              <input type="checkbox" name="audio-genre" id="histFictAudio" value="1">
+              <label for="histFictAudio">Historical Fiction</label>
+              <input type="checkbox" name="audio-genre" id="fantasyAudio" value="2">
+              <label for="fantasyAudio">Fantasy</label>
+              <input type="checkbox" name="audio-genre" id="historyAudio" value="3">
+              <label for="historyAudio">History</label>
+              <input type="checkbox" name="audio-genre" id="fictionAudio" value="4">
+              <label for="fictionAudio">Fiction</label>
+              <input type="checkbox" name="audio-genre" id="autobioAudio" value="5">
+              <label for="autobioAudio">Autobiography</label>
+            </div>
             <br>
             <button type="submit" id="addAudioBtn">Add Audiobook</button>
           </form>
