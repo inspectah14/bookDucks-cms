@@ -17,8 +17,8 @@ const addBook = async () => {
   loggedInUserObj = JSON.parse(loggedInUserObj);
 
   bookGenreCheckboxes.forEach((box) => {
-    if(box.checked === true) {
-        checkedGenreBookBox.push(box.value);
+    if(box.checked) {
+      checkedGenreBookBox.push(box.value);
     }
   })
 
@@ -52,9 +52,23 @@ const addBook = async () => {
       })
 }
 
+const bookGenreFunc = async () => {
+  let isChecked = false;
+    for (let i = 0; i < bookGenreCheckboxes.length; i++) {
+        if ( bookGenreCheckboxes[i].checked ) {
+            isChecked = true;
+        };
+    };
+    if ( isChecked ) {
+      addBook();
+    } else {
+            alert( 'Please, check at least one checkbox!' );
+        }   
+};
+
 bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  addBook()
+  bookGenreFunc();
 })
 
 const audioForm = document.querySelector("#audioForm");
@@ -70,12 +84,18 @@ let checkedGenreAudioBox = [];
 
 const addAudio = async () => {
   loggedInUserObj = JSON.parse(loggedInUserObj);
+  let checkedGenres = false;
 
   audioGenreCheckboxes.forEach((box) => {
     if(box.checked === true) {
         checkedGenreAudioBox.push(box.value);
+        checkedGenres = true;
     }
   })
+
+  if(!checkedGenres) {
+    alert("Please check one or more genre.");
+  }
 
   let image = audioCover.files;
   let imgData = new FormData();
@@ -107,9 +127,23 @@ const addAudio = async () => {
       })
 }
 
+const audioGenreFunc = async () => {
+  let isChecked = false;
+    for (let i = 0; i < audioGenreCheckboxes.length; i++) {
+        if ( audioGenreCheckboxes[i].checked ) {
+            isChecked = true;
+        };
+    };
+    if ( isChecked ) {
+      addAudio();
+    } else {
+            alert( 'Please, check at least one checkbox!' );
+        }   
+};
+
 audioForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  addAudio()
+  audioGenreFunc();
 })
 
 if(!sessionStorage.getItem("token")){
